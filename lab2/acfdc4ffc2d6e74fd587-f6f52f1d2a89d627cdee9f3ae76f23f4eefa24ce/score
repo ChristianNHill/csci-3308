@@ -1,0 +1,16 @@
+cat grades.awk
+
+BEGIN {
+	sum=0;
+	grade=0;
+}
+
+{
+
+sum=$3+$4+$5+$6+$7;
+grade=(sum/5)*20;
+
+print $0," ", $1," ",grade,"%"
+}
+
+

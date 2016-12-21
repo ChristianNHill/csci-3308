@@ -1,0 +1,37 @@
+date outputs the current date
+ls -ltr prints a list of every file in the specified directory with additional information such as the user, and date of most recent edit
+cd .. moves up one directory from where you currently are
+pwd is present working directory and outputs the directory you are currently in
+who outputs a list of all the users currenty logged in
+whoami outputs the current user 
+man man outputs information about commonly used commands and flags
+env outputs information about your current environment
+
+mkdir cs3308, cd cs3308
+
+mv cs3308 csci3308, cd ..
+
+cp file newfile
+
+rm newfile
+
+mkdir tmp, rmdir tmp, cat test.txt
+
+head test.txt
+
+head test.txt
+
+tail test.txt
+
+find . -type f | grep "keyword" *
+
+find ./ -type f -name "books.txt"
+
+zip -r dir.zip csci3308
+unzip dir.zip -d tmp
+tar -cf dir.tar csci3308
+mkdir tmp, tar -xf dir.tar -C /tmp/
+
+touch test.txt
+
+

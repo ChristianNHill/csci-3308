@@ -1,0 +1,43 @@
+Step 2: diff
+	Cranberry was removed
+	Jackfruit was added
+	Nectarine was removed
+	Prickly Pear was removed
+	> and < tels you which file the selected text came from.
+	-c shows you the surrounding lines and gives either a - or a + depending on whether the text was added or removed.
+
+Step 3: wc
+	wc testPasswd.txt outputs the number of lines in the file is 15
+	wc testPasswd.txt ouputs the number of characters in the file is 692
+
+Step 4: cut
+	cut -f 1 -d ':' testPasswd.txt
+	cut -f 2,4 -d ' ' grades.txt
+
+Step 5: pipe
+	cut -f 4 -d ':' testPasswd.txt | sort | uniq
+	cut -f 4 -d ':' testPasswd.txt | sort | uniq > test.txt
+	grep -e '^(m|w|s)' testPasswd.txt | cut -f 1,6 -d ':'
+
+Step 6: sed
+	sed 's/[a-z]//g' leetSpeak.txt
+	sed 's/[0-9]//g' leetSpeak.txt
+        sed 's/[0-9]/_/g' leetSpeak.txt
+	Create a script containing the command: sed 's/0/o/g' leetSpeak.txt | sed 's/1/i/g' | sed 's/3/e/g' | sed 's/4/a/g' | sed 's/5/s/g' | sed 's/7/t/g' 
+	It is possible to reuse the script on another file.  Remove leetSpeak.txt from the command and then run ./test < leetSpeak.txt
+
+Step 7: awk
+	awk '{sum=$3+$4+$5+$6+$7; avg=(sum/5)*100; print $1," ",$2," ",avg,"%"}' grades.txt
+	awk '{sum+=$3} END {print sum/7;}' grades.txt
+	
+Step 8: regex
+	grep "[0-9][0-9][0-9]-[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]" regex_practice_data.txt | wc
+	770 phone numbers in the dataset
+	grep "[3][0][3]-[4][4][1]-[0-9][0-9][0-9][0-9]" regex_practice_data.txt | wc
+	51 city of Boulder phone numbers
+	grep -E -o "\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b" regex_practice_data.txt | wc
+	17705 emails in the file
+	grep -E -o "\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.(gov)\b" regex_practice_data.txt | wc
+	52 .gov emails in the file
+	grep -E -o "\b[A-Ma-m]\.[A-Za-z]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b" regex_practice_data.txt | wc
+	24 names in the file matching criteria on question 5.
