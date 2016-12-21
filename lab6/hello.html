@@ -1,0 +1,32 @@
+<html>
+<head>
+	<script src="http://code.jquery.com/jquery-2.2.0.js"></script>
+
+  <title>Hello</title>
+  <script>
+  function myFunction() {
+
+    $(document).ready(function() {
+      var url = 'https://api.forecast.io/forecast/77493a7b370a5cbc48b7215d21ea64d3/40.014984,-105.270546'
+      $.ajax(url).then(function(data) {
+        console.log(data)
+        $('#div1').append(data.currently.temperature)
+        $('#div2').append(data.currently.summary)
+        $('#div3').append(data.currently.humidity)
+
+      })
+    })
+  }
+  </script>
+</head>
+<body>
+  <p>Hello, world.</p>
+
+  <div id="div1"><h2>temperature</h2></div>
+  <div id="div2"><h2>summary</h2></div>
+  <div id="div3"><h2>humidity</h2></p></div>
+ 
+<button onclick="myFunction()"> Refresh </button>
+
+</body>
+</html>

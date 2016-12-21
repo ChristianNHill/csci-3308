@@ -1,0 +1,41 @@
+Part 1: GDB
+
+	4.  	The error is occurring on line 89.
+
+	6.  	The problem is malloc was not used to allocate memory to the variable int.
+			To fix, insert pt = malloc(sizeof(*pt)); before the loop is executed.
+
+	9.		break zeroDist
+
+	12.		delete 1
+			c
+
+
+Part 2: Valgrind
+
+	2.		Yes, 16,000,096 bytes.
+
+	3.		Lines 41, and 93.
+
+	4.		Add free(zero_pt); before return d;
+			Add free(pt); before return 0; in main
+
+Part 3: Profiling
+
+	1.		The program runs at ~1 sec with 7,000,000 iterations
+			Default arg:	0.15 sec
+
+	4.		Free
+			Rand
+			Main
+			zeroDist
+			dist
+
+	6.		Line 31, change pow() to sqrt()
+			Change all doubles to floats
+
+	8.		Runtime with optimizations is now 0.7 sec
+
+
+
+
